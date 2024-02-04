@@ -6,6 +6,56 @@
 ### 📝 Description
 **The Gym Pass App API**
 
+## 🚀 Quick Start
+
+**Requirements: Node >=18, Docker**
+
+---
+
+**1. Install the project dependencies.**
+
+**2. Set environment variables based on .env examples.**
+
+**3. Run the server based on commands section.**
+
+## ⌨️ Commands
+
+**Run the install dependencies command**
+
+```bash
+pnpm i
+```
+
+**Run the development server command:**
+
+```bash
+pnpm run dev
+```
+
+**Run the test command:**
+
+```bash
+pnpm test
+```
+
+**Run the build command:**
+
+```bash
+pnpm run build
+```
+
+**Run the builded server command:**
+
+```bash
+pnpm start
+```
+
+**Run the linter code command:**
+
+```bash
+pnpm run lint
+```
+
 ## 📝 Requirements
 
 ### 🛠️ Functional Requirements
