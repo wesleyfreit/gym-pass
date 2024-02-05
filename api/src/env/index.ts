@@ -1,5 +1,5 @@
+import { envSchema } from '@/validation/envSchema';
 import 'dotenv/config';
-import { envSchema } from '../validation/envSchema';
 
 const _env = envSchema.safeParse(process.env);
 
