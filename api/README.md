@@ -14,16 +14,22 @@
 
 **1. Install the project dependencies.**
 
-**2. Set environment variables based on .env examples.**
+**2. Set environment variables based on .env.example.**
 
 **3. Run the server based on commands section.**
 
 ## ⌨️ Commands
 
-**Run the install dependencies command**
+**Run the install dependencies command:**
 
 ```bash
 pnpm i
+```
+
+**Run the docker command that creates the postgresql container:**
+
+```bash
+docker compose up -d
 ```
 
 **Run the development server command:**
@@ -54,6 +60,13 @@ pnpm start
 
 ```bash
 pnpm run lint
+```
+
+**Other docker compose commands:**
+
+```bash
+docker compose stop # stop the containers
+docker compose down # delete the containers
 ```
 
 ## 📝 Requirements

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  gym-pass-db:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=username # insert a username here
+      - POSTGRESQL_PASSWORD=password # insert a password here
+      - POSTGRESQL_DATABASE=gym-pass
