@@ -1,10 +1,25 @@
 version: '3'
+
+networks:
+  postgres-network:
+    driver: bridge
+    name: ${POSTGRESQL_DATABASE}-network
+
+volumes:
+  postgres-data:
+    name: ${POSTGRESQL_DATABASE}-data
+
 services:
-  gym-pass-db:
-    image: bitnami/postgresql
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: ${POSTGRESQL_DATABASE}-db
+    networks:
+      - postgres-network
     ports:
       - 5432:5432
     environment:
-      - POSTGRESQL_USERNAME=username # insert a username here
-      - POSTGRESQL_PASSWORD=password # insert a password here
-      - POSTGRESQL_DATABASE=gym-pass
+      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+    volumes:
+      - postgres-data:/bitnami/postgresql
