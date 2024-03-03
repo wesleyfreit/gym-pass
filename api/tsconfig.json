@@ -6,10 +6,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "NodeNext",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "moduleResolution": "NodeNext"
   }
 }
