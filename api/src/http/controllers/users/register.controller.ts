@@ -1,7 +1,8 @@
-import bcrypt from 'bcrypt';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import z from 'zod';
-import { prisma } from '../../../lib/prisma';
+import { PrismaUsersRepository } from '../../../repositories/prisma/prisma-users-repository';
+import { UserAlreadyExists } from '../../../use-cases/errors/user-already-exists-error';
+import { RegisterUseCase } from '../../../use-cases/register';
 
 export const register = async (request: FastifyRequest, reply: FastifyReply) => {
   const registerBodySchema = z.object({
@@ -12,27 +13,18 @@ export const register = async (request: FastifyRequest, reply: FastifyReply) => 
 
   const { name, email, password } = registerBodySchema.parse(request.body);
 
-  const password_hash = await bcrypt.hash(password, 10);
+  try {
+    const prismaUsersRepository = new PrismaUsersRepository();
+    const registerUseCase = new RegisterUseCase(prismaUsersRepository);
 
-  const userWithSameEmail = await prisma.user.findFirst({
-    where: {
-      email,
-    },
-  });
+    await registerUseCase.execute({ name, email, password });
+  } catch (error) {
+    if (error instanceof UserAlreadyExists) {
+      return reply.status(409).send(error.message);
+    }
 
-  if (userWithSameEmail) {
-    return reply.status(409).send({
-      error: 'Email already in use.',
-    });
+    return reply.status(500).send(); // TODO: improve global error handling
   }
-
-  await prisma.user.create({
-    data: {
-      name,
-      email,
-      password_hash,
-    },
-  });
 
   return reply.status(201).send();
 };
