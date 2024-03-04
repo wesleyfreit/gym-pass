@@ -18,13 +18,13 @@ export const register = async (request: FastifyRequest, reply: FastifyReply) => 
     const registerUseCase = new RegisterUseCase(prismaUsersRepository);
 
     await registerUseCase.execute({ name, email, password });
+
+    return reply.status(201).send();
   } catch (error) {
     if (error instanceof UserAlreadyExists) {
       return reply.status(409).send(error.message);
     }
 
-    return reply.status(500).send(); // TODO: improve global error handling
+    throw error;
   }
-
-  return reply.status(201).send();
 };
