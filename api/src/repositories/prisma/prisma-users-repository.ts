@@ -1,4 +1,4 @@
-import type { Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { prisma } from '../../lib/prisma';
 import { UsersRepository } from '../users-repository';
 
@@ -13,9 +13,7 @@ export class PrismaUsersRepository implements UsersRepository {
 
   async findByEmail(email: string) {
     const user = await prisma.user.findFirst({
-      where: {
-        email,
-      },
+      where: { email: { equals: email, mode: 'insensitive' } },
     });
 
     return user;

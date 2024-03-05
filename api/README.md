@@ -1,14 +1,16 @@
 ## 💻 Project
 
 ### 📖 Title
+
 **@gym-pass/api**
 
 ### 📝 Description
+
 **The Gym Pass App API**
 
 ## 🚀 Quick Start
 
-**Requirements: Node >=18, Docker**
+**Requirements: Node >=18, Docker | Atlas MongoDB Url**
 
 ---
 
@@ -73,7 +75,7 @@ docker compose down # delete the containers
 
 ### 🛠️ Functional Requirements
 
-- ▶️ It must be possible to register a user
+- ✅ It must be possible to register a user
 
 - ▶️ It must be possible to authenticate a user
 
@@ -85,9 +87,9 @@ docker compose down # delete the containers
 
 - ▶️ It must be possible to for the authenticated user to search for nearby gyms
 
-- ▶️ It must be possible to for the authenticated user to search for gyms by name 
+- ▶️ It must be possible to for the authenticated user to search for gyms by name
 
-- ▶️ It must be possible to for the authenticated user to check-in to a gym 
+- ▶️ It must be possible to for the authenticated user to check-in to a gym
 
 - ▶️ It must be possible to validate a user's check-in
 
@@ -95,7 +97,7 @@ docker compose down # delete the containers
 
 ### 📚 Business Rules
 
-- ▶️ The user cannot register with a duplicate email
+- ✅ The user cannot register with a duplicate email
 
 - ▶️ The user cannot check-in twice on the same day
 
@@ -109,9 +111,9 @@ docker compose down # delete the containers
 
 ### 🛠️ Non-Functional Requirements
 
-- ▶️ The user password must be encrypted
+- ✅ The user password must be encrypted
 
-- ▶️ The application data must be persisted in a PostgreSQL database
+- ✅ The application data must be persisted in a PostgreSQL database
 
 - ▶️ Every data list must be paginated with 20 items per page
 
