@@ -77,9 +77,9 @@ docker compose down # delete the containers
 
 - ✅ It must be possible to register a user
 
-- ▶️ It must be possible to authenticate a user
+- ✅ It must be possible to authenticate a user
 
-- ▶️ It must be possible to obtain the authenticated user profile
+- ✅ It must be possible to obtain the authenticated user profile
 
 - ▶️ It must be possible to obtain the number of check-ins performed by the authenticated user
 
