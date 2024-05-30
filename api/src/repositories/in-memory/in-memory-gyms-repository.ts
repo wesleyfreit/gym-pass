@@ -1,6 +1,6 @@
 import { type Gym, Prisma } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
-import { GymsRepository } from '../gyms-repositort';
+import { GymsRepository } from '../gyms-repository';
 
 export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = [];
