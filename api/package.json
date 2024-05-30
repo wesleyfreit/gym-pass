@@ -7,9 +7,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "dev": "tsx watch --clear-screen=false src/server.ts",
+    "dev": "tsx watch --clear-screen=false --env-file=.env src/server.ts",
     "build": "tsup src --out-dir build",
-    "start": "node build/server.js",
+    "start": "node --env-file=.env build/server.js",
     "lint": "eslint src --fix",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@prisma/client": "5.9.1",
     "bcrypt": "^5.1.1",
-    "dotenv": "16.4.1",
+    "dayjs": "^1.11.10",
     "fastify": "4.26.0",
     "zod": "3.22.4"
   },

@@ -10,7 +10,7 @@
 
 ## 🚀 Quick Start
 
-**Requirements: Node >=18, Docker | Atlas MongoDB Url**
+**Requirements: Node >=18, Docker | PostgreeSQL Url**
 
 ---
 
@@ -89,7 +89,7 @@ docker compose down # delete the containers
 
 - ▶️ It must be possible to for the authenticated user to search for gyms by name
 
-- ▶️ It must be possible to for the authenticated user to check-in to a gym
+- ✅ It must be possible to for the authenticated user to check-in to a gym
 
 - ▶️ It must be possible to validate a user's check-in
 
@@ -99,7 +99,7 @@ docker compose down # delete the containers
 
 - ✅ The user cannot register with a duplicate email
 
-- ▶️ The user cannot check-in twice on the same day
+- ✅ The user cannot check-in twice on the same day
 
 - ▶️ The user will not be able to check-in if they are'nt close to the gym (100m)
 
