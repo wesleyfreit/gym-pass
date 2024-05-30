@@ -1,4 +1,3 @@
-import { Decimal } from '@prisma/client/runtime/library';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InMemoryCheckInsRepository } from '../repositories/in-memory/in-memory-check-ins-repository';
 import { InMemoryGymsRepository } from '../repositories/in-memory/in-memory-gyms-repository';
@@ -12,18 +11,18 @@ const GYM_LATITUDE = -6.8862844;
 const GYM_LONGITUDE = -38.5485094;
 
 describe('Check in use case', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     checkInsRepository = new InMemoryCheckInsRepository();
     gymsRepository = new InMemoryGymsRepository();
     sut = new CheckInUseCase(checkInsRepository, gymsRepository);
 
-    gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'gym-01',
       title: 'Gym 01',
       description: '',
       phone: '',
-      latitude: new Decimal(GYM_LATITUDE),
-      longitude: new Decimal(GYM_LONGITUDE),
+      latitude: GYM_LATITUDE,
+      longitude: GYM_LONGITUDE,
     });
 
     vi.useFakeTimers();
