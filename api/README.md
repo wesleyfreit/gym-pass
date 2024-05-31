@@ -83,7 +83,7 @@ docker compose down # delete the containers
 
 - ▶️ It must be possible to obtain the number of check-ins performed by the authenticated user
 
-- ▶️ It must be possible to for the authenticated user to obtain check-in history
+- ✅ It must be possible to for the authenticated user to obtain check-in history
 
 - ▶️ It must be possible to for the authenticated user to search for nearby gyms
 
@@ -115,6 +115,6 @@ docker compose down # delete the containers
 
 - ✅ The application data must be persisted in a PostgreSQL database
 
-- ▶️ Every data list must be paginated with 20 items per page
+- ✅ Every data list must be paginated with 20 items per page
 
 - ▶️ The user must be identified by a JWT (JSON Web Token)
