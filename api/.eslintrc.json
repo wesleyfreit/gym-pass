@@ -18,20 +18,14 @@
     "prettier/prettier": [
       "error",
       {
-        "arrowParens": "always",
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "printWidth": 90,
-        "endOfLine": "auto"
+        "configFile": ".prettierrc.json"
       }
     ]
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+      "@typescript-eslint/parser": [".ts", ".d.ts"]
     }
   },
-  "ignorePatterns": ["*.config.*", "node_modules/", "build/", "api/"]
+  "ignorePatterns": ["*.config.*", "node_modules/", "build/", "coverage/"]
 }
