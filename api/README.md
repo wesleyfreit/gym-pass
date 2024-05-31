@@ -93,7 +93,7 @@ docker compose down # delete the containers
 
 - ▶️ It must be possible to validate a user's check-in
 
-- ▶️ It must be possible to register a gym
+- ✅ It must be possible to register a gym
 
 ### 📚 Business Rules
 
@@ -101,7 +101,7 @@ docker compose down # delete the containers
 
 - ✅ The user cannot check-in twice on the same day
 
-- ▶️ The user will not be able to check-in if they are'nt close to the gym (100m)
+- ✅ The user will not be able to check-in if they are'nt close to the gym (100m)
 
 - ▶️ The check-in can only be validated up to 20 minutes after it is created
 
