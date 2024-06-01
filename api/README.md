@@ -1,12 +1,4 @@
-## 💻 Project
-
-### 📖 Title
-
-**@gym-pass/api**
-
-### 📝 Description
-
-**The Gym Pass App API**
+## 💻 **@gym-pass/api**
 
 ## 🚀 Quick Start
 
@@ -81,7 +73,7 @@ docker compose down # delete the containers
 
 - ✅ It must be possible to obtain the authenticated user profile
 
-- ▶️ It must be possible to obtain the number of check-ins performed by the authenticated user
+- ✅ It must be possible to obtain the number of check-ins performed by the authenticated user
 
 - ✅ It must be possible to for the authenticated user to obtain check-in history
 
