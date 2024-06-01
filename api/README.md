@@ -79,7 +79,7 @@ docker compose down # delete the containers
 
 - ▶️ It must be possible to for the authenticated user to search for nearby gyms
 
-- ▶️ It must be possible to for the authenticated user to search for gyms by name
+- ✅ It must be possible to for the authenticated user to search for gyms by name
 
 - ✅ It must be possible to for the authenticated user to check-in to a gym
 
