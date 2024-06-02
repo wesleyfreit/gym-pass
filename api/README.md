@@ -77,7 +77,7 @@ docker compose down # delete the containers
 
 - ✅ It must be possible to for the authenticated user to obtain check-in history
 
-- ▶️ It must be possible to for the authenticated user to search for nearby gyms
+- ✅ It must be possible to for the authenticated user to search for nearby gyms (up to 10km)
 
 - ✅ It must be possible to for the authenticated user to search for gyms by name
 
