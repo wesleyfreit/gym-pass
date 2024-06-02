@@ -95,7 +95,7 @@ docker compose down # delete the containers
 
 - ✅ The user will not be able to check-in if they are'nt close to the gym (100m)
 
-- ▶️ The check-in can only be validated up to 20 minutes after it is created
+- ✅ The check-in can only be validated up to 20 minutes after it is created
 
 - ▶️ The check-in can only be validated by admins
 
