@@ -12,7 +12,7 @@ let sut: CheckInUseCase;
 const GYM_LATITUDE = -6.8862844;
 const GYM_LONGITUDE = -38.5485094;
 
-describe('Check in use case', () => {
+describe('Check-in use case', () => {
   beforeEach(async () => {
     checkInsRepository = new InMemoryCheckInsRepository();
     gymsRepository = new InMemoryGymsRepository();
@@ -34,7 +34,7 @@ describe('Check in use case', () => {
     vi.useRealTimers();
   });
 
-  it('should be able to check in', async () => {
+  it('should be able to check-in', async () => {
     const { checkIn } = await sut.execute({
       gymId: 'gym-01',
       userId: 'user-01',
@@ -45,7 +45,7 @@ describe('Check in use case', () => {
     expect(checkIn.id).toEqual(expect.any(String));
   });
 
-  it('should be able to check in twice in the same day', async () => {
+  it('should be able to check-in twice in the same day', async () => {
     vi.setSystemTime(new Date(2024, 2, 4, 14, 12, 0));
 
     await sut.execute({
@@ -65,7 +65,7 @@ describe('Check in use case', () => {
     ).rejects.toBeInstanceOf(MaxNumberOfCheckInsError);
   });
 
-  it('should be able to check in twice but in different days', async () => {
+  it('should be able to check-in twice but in different days', async () => {
     vi.setSystemTime(new Date(2024, 2, 4, 14, 12, 0));
 
     await sut.execute({
@@ -87,7 +87,7 @@ describe('Check in use case', () => {
     expect(checkIn.id).toEqual(expect.any(String));
   });
 
-  it('should not be able to check in on distant gym', async () => {
+  it('should not be able to check-in on distant gym', async () => {
     await expect(
       sut.execute({
         gymId: 'gym-01',

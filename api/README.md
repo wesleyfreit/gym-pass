@@ -83,7 +83,7 @@ docker compose down # delete the containers
 
 - ✅ It must be possible to for the authenticated user to check-in to a gym
 
-- ▶️ It must be possible to validate a user's check-in
+- ✅ It must be possible to validate a user's check-in
 
 - ✅ It must be possible to register a gym
 
