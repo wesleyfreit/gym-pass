@@ -19,6 +19,7 @@
   "author": "wesley_freit",
   "license": "MIT",
   "dependencies": {
+    "@fastify/jwt": "^8.0.1",
     "@prisma/client": "5.9.1",
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.10",
