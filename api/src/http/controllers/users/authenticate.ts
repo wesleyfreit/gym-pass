@@ -3,10 +3,7 @@ import z from 'zod';
 import { makeAuthenticateUseCase } from '../../../factories/make-authenticate-use-case';
 import { InvalidCredentialsError } from '../../../use-cases/errors/invalid-credentials-error';
 
-export const authenticateController = async (
-  request: FastifyRequest,
-  reply: FastifyReply,
-) => {
+export const authenticate = async (request: FastifyRequest, reply: FastifyReply) => {
   const authenticateBodySchema = z.object({
     email: z.string({ required_error: 'Email is required' }).email(),
     password: z.string({ required_error: 'Password is required' }).min(6),
