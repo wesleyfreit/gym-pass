@@ -5,13 +5,14 @@ on: [push]
 jobs:
   run-unit-tests:
     runs-on: ubuntu-latest
-    strategy:
 
+    strategy:
       matrix:
         node-version: [20]
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Install pnpm
       uses: pnpm/action-setup@v4
       with:
@@ -25,8 +26,6 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install
-      working-directory: api
 
     - name: Run unit tests
       run: pnpm run test
-      working-directory: api
