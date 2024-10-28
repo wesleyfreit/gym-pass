@@ -1,7 +1,6 @@
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { app } from '../../../app';
-import { createGyms } from '../../../utils/test/create-gyms';
 import { createAndAuthenticateUser } from '../../../utils/test/register-and-authenticate-user';
 
 describe('Search Gyms Controller (e2e)', () => {
@@ -16,7 +15,13 @@ describe('Search Gyms Controller (e2e)', () => {
   it('should be able to search gyms by title', async () => {
     const { token } = await createAndAuthenticateUser(app);
 
-    await createGyms(app, token);
+    await request(app.server).post('/gyms').set('Authorization', `Bearer ${token}`).send({
+      title: 'Gym Title 1',
+      description: 'Gym Description',
+      phone: '123456789',
+      latitude: -6.8862844,
+      longitude: -38.5485094,
+    });
 
     const response = await request(app.server)
       .get('/gyms/search')
