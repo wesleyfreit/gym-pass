@@ -11,7 +11,7 @@ describe('Authenticate Controller (e2e)', () => {
     await app.close();
   });
 
-  it('should be able to login', async () => {
+  it('should be able to authenticate an user', async () => {
     await request(app.server).post('/users').send({
       name: 'John Doe',
       email: 'jooonhdoeeeeee@gmail.com',

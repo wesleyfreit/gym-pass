@@ -12,16 +12,16 @@ describe('Profile Controller (e2e)', () => {
     await app.close();
   });
 
-  it('should be able to get a user profile', async () => {
+  it('should be able to get the user profile', async () => {
     const { token } = await createAndAuthenticateUser(app);
 
-    const profileResponse = await request(app.server)
+    const response = await request(app.server)
       .get('/me')
       .set('Authorization', `Bearer ${token}`)
       .send();
 
-    expect(profileResponse.status).toBe(200);
-    expect(profileResponse.body.user).toEqual(
+    expect(response.status).toBe(200);
+    expect(response.body.user).toEqual(
       expect.objectContaining({
         email: 'jooonhdoeeeeee@gmail.com',
       }),

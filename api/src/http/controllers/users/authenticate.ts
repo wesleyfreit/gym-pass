@@ -34,7 +34,9 @@ export const authenticate = async (request: FastifyRequest, reply: FastifyReply)
     });
   } catch (error) {
     if (error instanceof InvalidCredentialsError) {
-      return reply.status(400).send({ error: error.message });
+      return reply.status(401).send({
+        error: error.message,
+      });
     }
 
     throw error;
