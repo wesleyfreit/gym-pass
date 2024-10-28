@@ -5,6 +5,9 @@ import { SearchGymsUseCase } from './search-gyms';
 let gymsRepository: InMemoryGymsRepository;
 let sut: SearchGymsUseCase;
 
+const GYM_LATITUDE = -6.8862844;
+const GYM_LONGITUDE = -38.5485094;
+
 describe('Search gyms use case', () => {
   beforeEach(async () => {
     gymsRepository = new InMemoryGymsRepository();
@@ -17,8 +20,8 @@ describe('Search gyms use case', () => {
       title: 'Gym 01',
       description: null,
       phone: null,
-      latitude: -6.8862844,
-      longitude: -38.5485094,
+      latitude: GYM_LATITUDE,
+      longitude: GYM_LONGITUDE,
     });
 
     await gymsRepository.create({
@@ -26,12 +29,12 @@ describe('Search gyms use case', () => {
       title: 'Gym 02',
       description: null,
       phone: null,
-      latitude: -6.8862844,
-      longitude: -38.5485094,
+      latitude: GYM_LATITUDE,
+      longitude: GYM_LONGITUDE,
     });
 
     const { gyms } = await sut.execute({
-      search: 'Gym 01',
+      query: 'Gym 01',
       page: 1,
     });
 
@@ -46,13 +49,13 @@ describe('Search gyms use case', () => {
         title: `Gym ${1}`,
         description: null,
         phone: null,
-        latitude: -6.8862844,
-        longitude: -38.5485094,
+        latitude: GYM_LATITUDE,
+        longitude: GYM_LONGITUDE,
       });
     }
 
     const { gyms } = await sut.execute({
-      search: 'Gym',
+      query: 'Gym',
       page: 2,
     });
 

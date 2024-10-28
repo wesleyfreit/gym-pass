@@ -49,9 +49,9 @@ describe('Validate check-in use case', () => {
       user_id: 'user-01',
     });
 
-    const twentyOneMinutes = 1000 * 60 * 21; // 21 minutes in milliseconds
+    const twentyOneMinutesInMS = 1000 * 60 * 21; // 21 minutes in milliseconds
 
-    vi.advanceTimersByTime(twentyOneMinutes);
+    vi.advanceTimersByTime(twentyOneMinutesInMS);
 
     await expect(
       sut.execute({

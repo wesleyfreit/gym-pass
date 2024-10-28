@@ -2,7 +2,7 @@ import { type Gym } from '@prisma/client';
 import { GymsRepository } from '../repositories/gyms-repository';
 
 interface SearchGymsUseCaseRequest {
-  search: string;
+  query: string;
   page: number;
 }
 
@@ -14,10 +14,10 @@ export class SearchGymsUseCase {
   constructor(private gymsRepository: GymsRepository) {}
 
   async execute({
-    search,
+    query,
     page,
   }: SearchGymsUseCaseRequest): Promise<SearchGymsUseCaseResponse> {
-    const gyms = await this.gymsRepository.searchMany(search, page);
+    const gyms = await this.gymsRepository.searchMany(query, page);
 
     return {
       gyms,

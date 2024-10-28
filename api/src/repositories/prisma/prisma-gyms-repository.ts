@@ -36,8 +36,10 @@ export class PrismaGymsRepository implements GymsRepository {
             radians(${latitude}) 
           ) * cos( 
             radians( latitude ) 
-          ) * cos( radians( longitude ) - radians(${longitude}) ) * sin( radians( latitude ) ) ) 
-      ) <= 10`;
+          ) * cos( 
+            radians( longitude ) - radians(${longitude}) 
+            ) * sin( radians( latitude ) ) ) 
+      ) <= 10`; // Nearby gyms within 10km
 
     return gyms;
   }

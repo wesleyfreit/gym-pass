@@ -99,13 +99,13 @@ describe('Check-in use case', () => {
     ).rejects.toBeInstanceOf(MaxDistanceError);
   });
 
-  it('should not be able to check-in on a invalid gym', async () => {
+  it('should not be able to check-in on an invalid gym', async () => {
     await expect(
       sut.execute({
         gymId: 'invalid-gym',
         userId: 'user-01',
-        userLatitude: -6.8864745,
-        userLongitude: -38.5502237,
+        userLatitude: GYM_LATITUDE,
+        userLongitude: GYM_LONGITUDE,
       }),
     ).rejects.toBeInstanceOf(ResourceNotFoundError);
   });
